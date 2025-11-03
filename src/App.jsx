@@ -61,15 +61,15 @@ function App() {
           BOOK YOUR STALL NOW
         </p> */}
 
-        <button
-          onClick={toggleForm}
-          className="relative mt-5 px-10 py-3 font-extrabold text-black rounded-full overflow-hidden group"
-        >
-          <span className="absolute inset-0 bg-linear-to-r from-yellow-300 to-green-400 rounded-full transition-transform duration-1800 ease-in-out group-hover:rotate-180"></span>
-          <span className="relative z-10 transform scale-140 transition-all duration-1000 ease-in-out group-hover:scale-140 group-hover:tracking-wider">
-            BOOK YOUR STALL NOW
-          </span>
-        </button>
+         <button
+            onClick={toggleForm}
+            className="relative mt-3 px-10 py-3 font-extrabold text-black rounded-full overflow-hidden group"
+          >
+            <span className="absolute inset-0 bg-linear-to-r from-yellow-300 to-green-400 rounded-full transition-transform duration-1500 ease-in-out group-hover:rotate-180"></span>
+            <span className="relative z-10 transform scale-100 transition-all duration-1000 ease-in-out group-hover:scale-140 group-hover:tracking-wider">
+              BOOK YOUR STALL NOW
+            </span>
+          </button>
       </section>
 
       <section>
@@ -258,7 +258,7 @@ function App() {
         </div>
       </section>
 
-     {/* Featured Brands Section */}
+{/* Featured Brands Section */}
 <section className="min-h-screen bg-white flex flex-col justify-center items-center text-center px-4 sm:px-6">
   <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3 uppercase tracking-tight">
     Featured Brands
@@ -267,31 +267,24 @@ function App() {
     Discover the leading brands and partners joining our event
   </p>
 
-  {/* Logos */}
+  {/* Logos + Names */}
   <div className="flex flex-wrap justify-center items-end gap-12 sm:gap-32 max-w-6xl">
     {logos.map((logo, index) => (
       <div
         key={index}
-        className="flex items-end justify-center w-28 sm:w-72 h-36 sm:h-44"
+        className="flex flex-col items-center justify-end w-28 sm:w-72"
       >
-        <img
-          src={logo.img}
-          alt={logo.name}
-          className="w-full h-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-in-out"
-        />
+        <div className="flex items-end justify-center h-36 sm:h-44">
+          <img
+            src={logo.img}
+            alt={logo.name}
+            className="w-full h-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-in-out"
+          />
+        </div>
+        <h3 className="mt-4 text-base sm:text-lg font-medium text-gray-700 text-center">
+          {logo.name}
+        </h3>
       </div>
-    ))}
-  </div>
-
-  {/* Names in One Line */}
-  <div className="flex flex-wrap justify-center items-center gap-12 sm:gap-60 mt-8 max-w-6xl">
-    {logos.map((logo, index) => (
-      <h3
-        key={index}
-        className="text-base sm:text-lg font-medium text-gray-700 transition-colors"
-      >
-        {logo.name}
-      </h3>
     ))}
   </div>
 </section>
